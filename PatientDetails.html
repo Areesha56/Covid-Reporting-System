@@ -1,0 +1,76 @@
+
+{% extends "base.html" %}
+{% block title %}Youv'e logged in {% endblock %}
+
+{% block content %}
+<nav class="NavClass" style="background-color: #8ec4eb;position: sticky;">
+  <a class="navbar-brand" href="#">Covid Reporting System</a>
+</nav>
+  <div class="DashboardSideBar">
+
+    <a class="active" href="/dashboard">Home</a>
+    <a href="/PatientDetails">Patient Details</a>
+    <a class="end" href="/logout">Logout</a>
+  </div>
+  <div class="content">
+  
+    <h1>The Covid-19 Patients Information</h1>
+
+    <div align="center">
+        
+        <h2 align="left">Patients List</h2>
+        <h3><a href="/newPatient">New Patient</a></h3>
+        <table border="1" cellpadding="10">
+            <tr style="font-size: 12px;">
+                <td>No</td>
+                <td> Registration Date</td>
+                <td> First Name</td>
+                <td> Last Name</td>
+                <td> Age</td>
+                <td> Gender</td>
+                <td> Country</td>
+                <td> City</td>
+                <td> Postal Address</td>
+                <td> Email Address</td>
+                <td> Phone No</td>
+                <td> Covid Test</td>
+                <td> Fever Symptom</td>
+                <td> Cough Symptom</td>
+                <td> Cold Symptom</td>
+                <td>Action</td>
+            </tr>
+            <!-- # for patient in patients: -->
+            {% for patient in patients %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{patient.registration_date}}</td>
+                <td>{{ patient.first_name }} {{ patient.last_name }}</td>
+                <td>{{ patient.patient_age }}</td>
+                <td>{{ patient.patient_gender }}</td>
+                <td>{{ patient.patient_country}}</td>
+                <td>{{ patient.patient_city}}</td>
+                <td>{{ patient.patient_postal_address }}</td>
+                <td>{{ patient.patient_email_address }}</td>
+                <td>{{ patient.patient_phone_number}}</td>
+                <td>{{ patient.patient_covid_test}}</td>
+                <td>{{ patient.fever_symptom}}</td>
+                <td>{{ patient.cold_symptom }}</td>
+                <td>{{ patient.cough_symptom }}</td>
+                <td>
+                  <a href="/patients/edit/{{ patient.first_name }}/{{ patient.last_name }}">Edit</a>
+                  &nbsp;&nbsp;&nbsp;
+                  <a href="/patients/delete/{{ patient.first_name }}/{{ patient.last_name }}">Delete</a>
+                  <!--                     <a href="/patients/edit/{{ patient.first_name }}/{{ patient.last_name }}">Edit</a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a href="/patients/delete/{{ patient.first_name }}/{{ patient.last_name }}">Delete</a> -->
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+  </div>
+
+
+
+
+{% endblock %}

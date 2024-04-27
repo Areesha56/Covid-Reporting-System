@@ -1,0 +1,169 @@
+
+{% extends "base.html" %}
+{% block title %}Youv'e logged in {% endblock %}
+
+{% block content %}
+
+
+<div class="container-fluid" >
+
+  <div class="row d-flex justify-content-center pt-5 mb-5">
+    <!--  -->
+    <form action="{{ url_for("createNewpatient")}}" method="post">
+
+      <h1 class="text-center">New/Edit a Patient</h1>
+
+      <div class="form-row">
+
+        <div class="form-group col-md-4">
+          <label for="registration_date">Registration Date:</label>
+          <input type="date" class="form-control" id="registration_date" name="registration_date" required>
+        </div>          
+
+        <div class="form-group col-md-4">
+          <label for="first_name">Patient First Name:</label>
+          <input type="text" class="form-control" id="first_name" name="first_name" required>
+        </div>   
+
+        <div class="form-group col-md-4">
+          <label for="last_name">Patient Last Name:</label>
+          <input type="text" class="form-control" id="last_name" name="last_name" required>
+        </div>
+
+      </div>
+
+
+      <div class="form-row">
+
+        <div class="form-group col-md-6">
+          <label for="patient_age">Patient Age</label>
+          <input type="number" name="patient_age" class="form-control" id="patient_age" required>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="patient_gender">Patient Gender</label>
+          <select class="form-control" id="patient_gender" name="patient_gender" required>
+            <option value="">Choose...</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+      </div>
+
+
+
+      <div class="form-row">
+
+        <div class="form-group col-md-6">
+          <label for="patient_country">Patient Country:</label>
+          <select class="form-control" id="patient_country" name="patient_country" required>
+            <option value="">Choose...</option>
+            <option value="India">India</option>
+            <option value="Pakistan">Pakistan</option>
+          </select>
+        </div>   
+
+        <div class="form-group col-md-6">
+          <label for="patient_city">Patient City:</label>
+          <select class="form-control" id="patient_city" name="patient_city" required>
+            <option value="">Choose...</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Lahore">Lahore</option>
+            <option value="Karachi">Karachi</option>
+          </select>
+        </div>
+
+      </div>
+
+
+      <div class="form-row">
+
+        <div class="form-group col-md-12">
+          <label for="patient_postal_address">Patient Postal Address:</label>
+          <input type="text" class="form-control" id="patient_postal_address" name="patient_postal_address" required>
+        </div>         
+
+        <div class="form-group col-md-12">
+          <label for="patient_email_address">Patient Email Address:</label>
+          <input type="text" class="form-control" id="patient_email_address" name="patient_email_address" required>
+        </div>   
+
+      </div>
+
+
+      <div class="form-row">
+
+      
+
+        <div class="form-group col-md-12">
+          <label for="patient_phone_number">Patient Phone Number:</label>
+          <input type="text" class="form-control" id="patient_phone_number" name="patient_phone_number" required>
+        </div>   
+
+      </div>
+
+      <div class="form-row">
+
+        <div class="form-group col-md-12">
+          <label for="patient_covid_test">Patient Covid Test:</label>
+          <select class="form-control" id="patient_covid_test" name="patient_covid_test" required>
+            <option value="">Choose...</option>
+            <option value="Positive">Positive</option>
+            <option value="Negative">Negative</option>
+          </select>
+        </div>   
+
+      </div>
+
+
+      <hr>
+
+      <h3 class="text-center">Patient Symptoms</h3>
+
+
+
+      <div class="form-row">
+
+        <div class="form-group col-md-4">
+          <label for="fever_symptom">Fever Symptom:</label>
+          <select class="form-control" id="fever_symptom" name="fever_symptom" required>
+            <option value="">Choose...</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>         
+
+        <div class="form-group col-md-4">
+          <label for="cold_symptom">Cold Symptom:</label>
+          <select class="form-control" id="cold_symptom" name="cold_symptom" required>
+            <option value="">Choose...</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>         
+
+        <div class="form-group col-md-4">
+          <label for="cough_symptom">Cough Symptom:</label>
+          <select class="form-control" id="cough_symptom" name="cough_symptom" required>
+            <option value="">Choose...</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>   
+
+      </div>
+
+      <hr>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <a href="/PatientDetails"><button type="button" class="btn btn-primary">Back</button></a>
+    </form>
+
+  </div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Register System{% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-dark" style="background-color: #8ec4eb;">
+  <a class="navbar-brand" href="#">Covid Reporting System</a>
+
+</nav>
+
+
+
+{% if message  %}
+    <div class="alert alert-secondary" role="alert">
+        <p>{{ message }}</p>
+    </div>
+{% endif %}
+<!-- <div>
+  This system reporting and contains the records of corona Patients</div> -->
+<div class="mycard">
+    <div class="internalcard">
+        <h1 class="center">Create an Account</h1>
+<form  method="post">
+   
+        <label for="InputUserFullname">Full name</label>
+        <input name="fullname" class="inputfield" id="InputUserFullName" aria-describedby="emailHelp" placeholder="Enter your full name">
+        
+ 
+  
+        <label for="InputUserEmail">Email address</label>
+        <input name="email" class="inputfield" id="InputUserEmail"  placeholder="Enter your email address">
+        
+  
+  
+        <label for="InputUserPassword">Password</label>
+        <input type="password" name="passwordA" class="inputfield" id="InputUserPassword" placeholder="Enter your Password">
+  
+
+    
+        <label for="InputUserPassword2">Confirm Password</label>
+        <input type="password" name="passwordB" class="inputfield" id="InputUserPassword2" placeholder="Confirm your password">
+
+    
+  <button type="submit" class="signupbtn ">Submit</button>
+
+
+</form>
+<p class=""> Already a member? <a href="/">Login here</a></p>
+</div></div>
+
+
+{% endblock %}
+
+

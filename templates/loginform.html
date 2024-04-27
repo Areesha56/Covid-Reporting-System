@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Login System{% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-dark" style="background-color: #8ec4eb;">
+    <a class="navbar-brand" href="#">Covid Reporting System</a>
+  </nav>
+  
+<!-- {% if message  %}
+    <div class="alert alert-secondary" role="alert">
+        <p>{{ message }}</p>
+    </div>
+{% endif %} -->
+
+<div class="mycard">
+    <div class="internalcard">
+<form action="" method="post">
+  
+      <label for="InputUserEmail">Email address</label>
+      <input name="email" class="inputfield" id="InputUserEmail"  placeholder="Enter email address">
+      
+  
+    
+      <label for="InputUserPassword">Password</label>
+      <input type="password" name="password" class="inputfield" id="InputUserPassword" placeholder="Password">
+ 
+  <button type="submit" class="signupbtn">Submit</button>
+</form>
+<p class=""> Not have an account <a href="/register">Sign Up here</a></p>
+</div></div>
+{% endblock %}
+
+
+
